@@ -1,0 +1,16 @@
+version: '3.4'
+services:
+    lb: 
+      build: ./lb 
+      ports:
+        - "8000:80"
+    app1: 
+      build: ./server1
+      ports: 
+        - "9001:3001"
+    app2: 
+      build: ./server2
+      ports:    
+        - "9002:3002"
+    redis:
+      image: redis:alpine
